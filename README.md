@@ -14,7 +14,7 @@ CRUDify is a project I developed to learn ASP.NET web development. It serves as 
 
 To get started with CRUDify:
 
-1. **Clone the Repository**: `git clone https://github.com/yourusername/CRUDify.git`
+1. **Clone the Repository**: `git clone https://github.com/Balongi393/CRUDify.git`
 2. **Explore the Code**: Dive into the codebase and familiarize yourself with ASP.NET concepts.
 3. **Run the Project**: Build and run the project locally to see CRUDify in action.
 4. **Experiment**: Modify and experiment with different aspects of the project to reinforce your learning.
