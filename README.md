@@ -1,4 +1,4 @@
-# CRUDify - ASP.NET Learning Project
+# CRUDify - ASP.NET Core Learning Project
 
 CRUDify is a project I developed to learn ASP.NET web development. It serves as a practical application to understand CRUD operations and search functionality within the ASP.NET framework.
 
