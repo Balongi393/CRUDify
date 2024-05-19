@@ -1,22 +1,73 @@
+/* Set base font size */
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
+/* Increase font size on larger screens */
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+/* Add focus styles to interactive elements */
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
+/* Set minimum height of html to full height */
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
+/* Add margin at the bottom of body to accommodate fixed footer */
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
+
+/* Styling for jumbotron */
+.jumbotron {
+    background-color: #343a40; /* Dark grey background */
+    padding: 3rem;
+    border-radius: 1rem;
+}
+
+/* Styling for cards */
+.card {
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for form inputs */
+.form-control {
+    border-radius: 0.5rem;
+    border-color: #ced4da;
+}
+
+/* Hover effect on buttons */
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Button transition effect */
+.btn {
+    transition: all 0.3s ease;
+}
+
+/* Styling for links */
+a {
+    color: #dc3545; /* Red color */
+    transition: all 0.3s ease;
+}
+
+    /* Hover effect on links */
+    a:hover {
+        color: #e63946; /* Light red color */
+    }

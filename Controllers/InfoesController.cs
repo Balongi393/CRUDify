@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CRUDify_Simplifying_data_management_with_ASP.NET.Data;
 using CRUDify_Simplifying_data_management_with_ASP.NET.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CRUDify_Simplifying_data_management_with_ASP.NET.Controllers
 {
@@ -23,6 +24,18 @@ namespace CRUDify_Simplifying_data_management_with_ASP.NET.Controllers
         public async Task<IActionResult> Index()
         {
             return View(await _context.Info.ToListAsync());
+        }
+
+        // GET: Infoes/ShowSearchForm
+        public async Task<IActionResult> ShowSearchForm()
+        {
+            return View();
+        }
+
+        // POST: Infoes/ShowSearchResults
+        public async Task<IActionResult> ShowSearchResults(string SearchPhrase)
+        {
+            return View("Index", await _context.Info.Where( j => j.Information.Contains(SearchPhrase)).ToListAsync());
         }
 
         // GET: Infoes/Details/5
@@ -44,6 +57,7 @@ namespace CRUDify_Simplifying_data_management_with_ASP.NET.Controllers
         }
 
         // GET: Infoes/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -52,6 +66,7 @@ namespace CRUDify_Simplifying_data_management_with_ASP.NET.Controllers
         // POST: Infoes/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Information,Details")] Info info)
@@ -66,6 +81,7 @@ namespace CRUDify_Simplifying_data_management_with_ASP.NET.Controllers
         }
 
         // GET: Infoes/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -84,6 +100,7 @@ namespace CRUDify_Simplifying_data_management_with_ASP.NET.Controllers
         // POST: Infoes/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Information,Details")] Info info)
@@ -117,6 +134,7 @@ namespace CRUDify_Simplifying_data_management_with_ASP.NET.Controllers
         }
 
         // GET: Infoes/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -135,6 +153,7 @@ namespace CRUDify_Simplifying_data_management_with_ASP.NET.Controllers
         }
 
         // POST: Infoes/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
